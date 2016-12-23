@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title></title>
+<title>ìœ íš¨ì„±ê²€ì‚¬</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript">
 $('#submitbutton').click(function(){
@@ -27,22 +27,22 @@ $('#reCheck').click(function(){
 </script>
 </head>
 <body>
-	<!-- Ã¼Å©µÈ ´ë»óÀ» ¹è¿­·Î ´ã¾Æº¸¼¼¿ä -->
-	<!-- var array = new Array(); <<-¹è¿­¼±¾ğ -->
-	<!-- array.push(°ª); ¹è¿­¿¡ °ª ´ã±â-->
+	<!-- ì²´í¬ëœ ëŒ€ìƒì„ ë°°ì—´ë¡œ ë‹´ì•„ë³´ì„¸ìš” -->
+	<!-- var array = new Array(); <<-ë°°ì—´ì„ ì–¸ -->
+	<!-- array.push(ê°’); ë°°ì—´ì— ê°’ ë‹´ê¸°-->
 	<input type="checkbox" name="checkNumber" value="checkbox1"/>checkbox1
 	<input type="checkbox" name="checkNumber" value="checkbox2"/>checkbox2
 	<input type="checkbox" name="checkNumber" value="checkbox3"/>checkbox3
-	<!-- Ã¼Å©¹Ú½ºÀÇ Ã¼Å©µÈ ´ë»óÀº ÇØÁ¦, ÇØÁ¦µÈ ´ë»óÀº Ã¼Å©¸¦ ÇØº¸¼¼¿ä -->
-	<button type="button" id="reCheck">¹İÀü</button>
+	<!-- ì²´í¬ë°•ìŠ¤ì˜ ì²´í¬ëœ ëŒ€ìƒì€ í•´ì œ, í•´ì œëœ ëŒ€ìƒì€ ì²´í¬ë¥¼ í•´ë³´ì„¸ìš” -->
+	<button type="button" id="reCheck">ë°˜ì „</button>
 	<br/>
-	<!-- ¼±ÅÃµÈ °ªÀ» Ãâ·Â½ÃÅ°°í ¼±ÅÃµÈ ´ë»óÀÇ °ª°ú optionType¼Ó¼º °ªÀ» Ãâ·Â½ÃÅ°¼¼¿ä -->
+	<!-- ì„ íƒëœ ê°’ì„ ì¶œë ¥ì‹œí‚¤ê³  ì„ íƒëœ ëŒ€ìƒì˜ ê°’ê³¼ optionTypeì†ì„± ê°’ì„ ì¶œë ¥ì‹œí‚¤ì„¸ìš” -->
 	<select name="selectCheck">
-		<option value="">::¼±ÅÃÇØ ÁÖ¼¼¿ä::</option>
+		<option value="">::ì„ íƒí•´ ì£¼ì„¸ìš”::</option>
 		<option value="select1" optionType="select1">select1</option>
 		<option value="select2" optionType="select2">select2</option>
 		<option value="select3" optionType="select3">select3</option>
 	</select>
-	<button type="button" id="submitbutton">È®ÀÎ</button>
+	<button type="button" id="submitbutton">í™•ì¸</button>
 </body>
 </html>
