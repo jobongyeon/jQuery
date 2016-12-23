@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<style type="text/css">
+	.myNotice{display: none;}
+</style>
+
+<script type="text/javascript">
+
+var myNotice = function(){
+	var isCheck = true;
+	$('.myNotice').each(function(){
+		var type = $(this).attr('type');
+		var target = $(this).attr('target');
+		var length = parseInt($(this).attr('length'));
+		var notice = $(this).text();
+		var targetVal = null;
+		
+		if(type == 'text'){
+			targetVal = $('input[name="'+target+'"]').val();
+			if(targetVal == undefined || targetVal == ''){
+				alert(notice);
+				isCheck = false;
+				return false;
+			}
+		}else if(type == 'radio'){
+			targetVal = $('input[name="'+target+'"]:checked').val();
+			if(targetVal == undefined || targetVal == ''){
+				alert(notice);
+				isCheck = false;
+				return false;
+			}
+		}else if(type == 'checkbox'){
+			var index = 0;
+			$('input[name="'+target+'"]').each(function(){
+				if($(this).prop('checked')){
+					index ++;
+				}
+			});
+			if(index == 0 || length > index){
+				alert(notice);
+				isCheck = false;
+				return false;
+			}
+		}
+		
+	});
+	return isCheck;
+};
+
+$(document).ready(function(){	
+	$('#submitButton').click(function(){
+		var isSubmit = myNotice();	
+		if(isSubmit){
+			alert('정상처리');
+		}else{
+			return false;
+		}
+	});
+});
+
+
+</script>
+
+</head>
+<body>
+
+<span class="myNotice" type="text" target="myName">
+	이름을 입력해주셔야합니다.
+</span>
+<input type="text" name="myName">
+
+<span class="myNotice" type="text" target="myAge">
+	나이을 입력해주셔야합니다.
+</span>
+<input type="text" name="myAge">
+
+<span class="myNotice" type="radio" target="en">
+	최소 1개 선택하셔야 합니다.
+</span>
+<input type="radio" name="en" value="a"> a
+<input type="radio" name="en" value="b"> b
+<input type="radio" name="en" value="c"> c
+
+<span class="myNotice" type="radio" target="ko">
+	최소 1개 선택하셔야 합니다.
+</span>
+<input type="radio" name="ko" value="가"> 가
+<input type="radio" name="ko" value="나"> 나
+<input type="radio" name="ko" value="다"> 다
+
+<span class="myNotice" type="checkbox" target="num" length="2">
+	최소 2개 이상 선택하셔야 합니다.
+</span>
+<input type="checkbox" name="num" value="1"> 1
+<input type="checkbox" name="num" value="2"> 2
+<input type="checkbox" name="num" value="3"> 3
+
+<button type="button" id="submitButton">저장</button>
+
+
+</body>
+</html>
